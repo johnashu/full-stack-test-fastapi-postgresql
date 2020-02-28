@@ -14,6 +14,8 @@ ARG FRONTEND_ENV=production
 ENV VUE_APP_ENV=${FRONTEND_ENV}
 
 # Comment out the next line to disable tests
+RUN npm update caniuse-lite browserslist
+
 RUN npm run test:unit
 
 RUN npm run build
