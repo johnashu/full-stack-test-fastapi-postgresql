@@ -17,10 +17,10 @@ services:
     deploy:
       labels:
         # For the configured domain
-        - traefik.frontend.rule=Host:${DOMAIN}
+        # - traefik.frontend.rule=Host:${DOMAIN}
         # For a domain with and without 'www'
         # Comment the previous line above and un-comment the line below
-        # - "traefik.frontend.rule=Host:www.${DOMAIN},${DOMAIN}"
+        - "traefik.frontend.rule=Host:www.${DOMAIN},${DOMAIN}"
         - traefik.enable=true
         - traefik.port=80
         - traefik.tags=${TRAEFIK_PUBLIC_TAG}
